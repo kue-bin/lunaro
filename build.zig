@@ -72,7 +72,7 @@ pub fn build(b: *Build) void {
     });
 
     module_system.link_libc = true;
-    module_system.linkSystemLibrary(@tagName(requested_lua), .{ .needed = true, .use_pkg_config = .force });
+    //module_system.linkSystemLibrary(@tagName(requested_lua), .{ .needed = true, .use_pkg_config = .force });
 
     // Lunaro Tests
 
@@ -151,7 +151,7 @@ pub fn build(b: *Build) void {
         const example_system_exe = b.addExecutable(.{
             .target = b.host,
             .name = "example-system",
-            .root_source_file =b.path("test/test.zig"),
+            .root_source_file = b.path("test/test.zig"),
             .optimize = optimize,
         });
 
