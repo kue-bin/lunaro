@@ -39,6 +39,8 @@ pub fn build(b: *Build) void {
 
     module_shared.linkLibrary(lua_shared);
 
+    b.installArtifact(lua_shared);
+
     // Lua Static Library
 
     const lua_static = b.addStaticLibrary(.{
@@ -63,6 +65,8 @@ pub fn build(b: *Build) void {
     });
 
     module_static.linkLibrary(lua_static);
+
+    b.installArtifact(lua_static);
 
     // Lua System Library
 
